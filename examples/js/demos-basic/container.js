@@ -7,10 +7,10 @@ const container = new PIXI.Container();
 
 app.stage.addChild(container);
 
-// Create a new texture
+// 创建一个新的纹理
 const texture = PIXI.Texture.from('examples/assets/bunny.png');
 
-// Create a 5x5 grid of bunnies
+// 创建一个5x5的兔子网格
 for (let i = 0; i < 25; i++) {
     const bunny = new PIXI.Sprite(texture);
     bunny.anchor.set(0.5);
@@ -19,17 +19,17 @@ for (let i = 0; i < 25; i++) {
     container.addChild(bunny);
 }
 
-// Move container to the center
+// 将容器移到中心
 container.x = app.screen.width / 2;
 container.y = app.screen.height / 2;
 
-// Center bunny sprite in local container coordinates
+// 将兔子精灵移动到本地容器坐标的中心
 container.pivot.x = container.width / 2;
 container.pivot.y = container.height / 2;
 
-// Listen for animate update
+// 监听动画更新
 app.ticker.add((delta) => {
-    // rotate the container!
-    // use delta to create frame-independent transform
+    // 旋转容器！
+    // 使用增量创建与帧无关的转换
     container.rotation -= 0.01 * delta;
 });

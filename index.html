@@ -12,11 +12,22 @@
     <link rel="icon" type="image/gif" href="img/favicon.png">
     <link rel="stylesheet" href="vendor/codemirror/codemirror.css">
     <link rel="stylesheet" href="dest/css/pixi-examples.min.css?v=5.0.0">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155388696-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-155388696-2');
+    </script>
 </head>
 
 <body>
     <header class="main-header">
-        <img src="img/blank.gif" class="pixijs-logo" alt="PixiJS Logo" />
+        <a href="/">
+            <img src="img/blank.gif" class="pixijs-logo" alt="PixiJS Logo" />
+        </a>
         <div class="hamburger">
             <i id="line1"></i>
             <i id="line2"></i>
@@ -68,18 +79,18 @@
                 <div class="select-group">
                     <span class="label">PixiJS版本:</span>
                     <div class="select">
-                        <span class="current">Latest Development</span>
+                        <span class="current">最新开发版</span>
                         <ul>
-                            <li data-val="dev">Latest Development</li>
-                            <li data-val="local">local</li>
+                            <li data-val="dev">最新开发版</li>
+                            <li data-val="local">本地版本</li>
                         </ul>
                     </div>
                 </div>
-                <button class="button download">Download Code</button>
+                <button class="button download">下载代码</button>
             </div>
         </div>
-        <p class="submit">Would you like to create a new example? Head over to the examples repo on <a
-                href="https://github.com/pixijs/examples" target="_blank">GitHub</a>.</p>
+        <p class="submit">您想创建一个新的例子吗？ 前往示例仓库 <a
+                href="https://github.com/zlq4863947/pixi.js-cn.examples" target="_blank">GitHub</a>.</p>
     </article>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -92,7 +103,7 @@
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
                 m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-103772589-4', 'auto');
+        ga('create', 'UA-155388696-2', 'auto');
         ga('send', 'pageview');
 
         function supportsES6() {
@@ -111,7 +122,7 @@
             document.write(script.outerHTML)
         } else {
             var title = document.getElementById('example-title');
-            title.innerText = "PixiJS Examples requires a browser that supports ES6";
+            title.innerText = "PixiJS示例要求使用支持ES6的浏览器";
 
             var divsToHide = document.getElementsByClassName('code');
             for (var i = 0; i < divsToHide.length; ++i) {
