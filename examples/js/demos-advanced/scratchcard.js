@@ -1,10 +1,10 @@
-// for this example you have to use mouse or touchscreen
+// 对于此示例，您必须使用鼠标或触摸屏
 
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 const { stage } = app;
 
-// prepare circle texture, that will be our brush
+// 准备圆形纹理，这将是我们的笔刷
 const brush = new PIXI.Graphics();
 brush.beginFill(0xffffff);
 brush.drawCircle(0, 0, 50);

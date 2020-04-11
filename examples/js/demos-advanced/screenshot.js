@@ -4,12 +4,10 @@ document.body.appendChild(app.view);
 let wait = false;
 let waiting = false;
 
-// Generates a texture object from a container, then give that texture to our
-// sprite object and create a download link containing an image of the snapshot
-// we just took
+// 从容器生成纹理对象，然后将该纹理提供给我们的Sprite对象，
+// 并创建一个包含我们刚刚拍摄的快照图像的下载链接
 
-// Note that we can do this with any container. Instead of 'app.stage', which
-// contains everything, try the 'bunnyContainer' instead.
+// 请注意，我们可以对任何容器执行此操作。代替包含所有内容的'app.stage'，而尝试使用'bunnyContainer'。
 function takeScreenshot() {
     wait = true;
     app.renderer.extract.canvas(app.stage).toBlob((b) => {
@@ -59,7 +57,7 @@ const style = new PIXI.TextStyle({
     fill: '#FFFFFF',
 });
 
-const screenshotText = new PIXI.Text('Click To Take Screenshot', style);
+const screenshotText = new PIXI.Text('单击以截屏', style);
 screenshotText.x = Math.round((app.screen.width - screenshotText.width) / 2);
 screenshotText.y = Math.round(screenshotText.height / 2);
 

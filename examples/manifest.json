@@ -1,27 +1,27 @@
 {
     "demos-basic": [
         {
-            "title": "Container",
+            "title": "容器",
             "entry": "container.js"
         },
         {
-            "title": "Transparent Background",
+            "title": "透明背景",
             "entry": "transparent-background.js"
         },
         {
-            "title": "Tinting",
+            "title": "着色",
             "entry": "tinting.js"
         },
         {
-            "title": "CacheAsBitmap",
+            "title": "缓存为位图",
             "entry": "cacheAsBitmap.js"
         },
         {
-            "title": "Particle Container",
+            "title": "粒子容器",
             "entry": "particle-container.js"
         },
         {
-            "title": "BlendModes",
+            "title": "混合模式",
             "entry": "blendmodes.js"
         },
         {
@@ -31,27 +31,27 @@
     ],
     "demos-advanced": [
         {
-            "title": "Slots",
+            "title": "老虎机",
             "entry": "slots.js"
         },
         {
-            "title": "Scratchcard",
+            "title": "刮刮卡",
             "entry": "scratchcard.js"
         },
         {
-            "title": "Mouse Trail",
+            "title": "鼠标轨迹",
             "entry": "mouse-trail.js"
         },
         {
-            "title": "Star Warp",
+            "title": "星际扭曲",
             "entry": "star-warp.js"
         },
         {
-            "title": "Screenshot",
+            "title": "屏幕截图",
             "entry": "screenshot.js"
         },
         {
-            "title": "Collision",
+            "title": "碰撞",
             "entry": "collision-detection.js"
         }
     ],

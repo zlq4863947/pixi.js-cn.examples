@@ -1,44 +1,44 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// holder to store the aliens
+// 用来存放外星人
 const aliens = [];
 
 const totalDudes = 20;
 
 for (let i = 0; i < totalDudes; i++) {
-    // create a new Sprite that uses the image name that we just generated as its source
+    // 创建一个使用我们刚刚生成的图像名称作为其源的新精灵
     const dude = PIXI.Sprite.from('examples/assets/eggHead.png');
 
-    // set the anchor point so the texture is centerd on the sprite
+    // 设置锚点，以使纹理居中于精灵上
     dude.anchor.set(0.5);
 
-    // set a random scale for the dude - no point them all being the same size!
+    // 设置一个随机比例 - 没必要让他们大小都一样！
     dude.scale.set(0.8 + Math.random() * 0.3);
 
-    // finally lets set the dude to be at a random position..
+    // 最后让我们把这家伙设成一个随机的位置..
     dude.x = Math.random() * app.screen.width;
     dude.y = Math.random() * app.screen.height;
 
     dude.tint = Math.random() * 0xFFFFFF;
 
-    // create some extra properties that will control movement :
-    // create a random direction in radians. This is a number between 0 and PI*2 which is the equivalent of 0 - 360 degrees
+    // 创建一些控制移动的额外属性 :
+    // 以弧度创建随机方向。这是一个介于0和PI*2之间的数字，相当于0-360度
     dude.direction = Math.random() * Math.PI * 2;
 
-    // this number will be used to modify the direction of the dude over time
+    // 这个数字会随着时间的推移来修改dude的方向
     dude.turningSpeed = Math.random() - 0.8;
 
-    // create a random speed for the dude between 2 - 4
+    // 创建2 - 4之间的随机速度
     dude.speed = 2 + Math.random() * 2;
 
-    // finally we push the dude into the aliens array so it it can be easily accessed later
+    // 最后我们把dude放入外星人数组中，这样以后就可以很容易地访问它了
     aliens.push(dude);
 
     app.stage.addChild(dude);
 }
 
-// create a bounding box for the little dudes
+// 为dude创建一个边界框
 const dudeBoundsPadding = 100;
 const dudeBounds = new PIXI.Rectangle(-dudeBoundsPadding,
     -dudeBoundsPadding,
@@ -46,7 +46,7 @@ const dudeBounds = new PIXI.Rectangle(-dudeBoundsPadding,
     app.screen.height + dudeBoundsPadding * 2);
 
 app.ticker.add(() => {
-    // iterate through the dudes and update their position
+    // 遍历dudes并更新位置
     for (let i = 0; i < aliens.length; i++) {
         const dude = aliens[i];
         dude.direction += dude.turningSpeed * 0.01;
@@ -54,7 +54,7 @@ app.ticker.add(() => {
         dude.y += Math.cos(dude.direction) * dude.speed;
         dude.rotation = -dude.direction - Math.PI / 2;
 
-        // wrap the dudes by testing their bounds...
+        // 通过测试边界来包装dude...
         if (dude.x < dudeBounds.x) {
             dude.x += dudeBounds.width;
         } else if (dude.x > dudeBounds.x + dudeBounds.width) {

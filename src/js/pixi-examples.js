@@ -153,7 +153,7 @@ jQuery(document).ready(($) => {
                 bpc.exampleTitle = $(this).text();
 
                 window.location.hash = page;
-                document.title = `${bpc.exampleTitle} - PixiJS Examples`;
+                document.title = `${bpc.exampleTitle} - PixiJS 示例`;
 
                 // Track page change in analytics
                 ga('set', { page, title: bpc.exampleTitle });

@@ -3,12 +3,12 @@ document.body.appendChild(app.view);
 
 app.stop();
 
-// load resources
+// 加载资源
 app.loader
     .add('spritesheet', 'examples/assets/spritesheet/monsters.json')
     .load(onAssetsLoaded);
 
-// holder to store aliens
+// 用来存放外星人
 const aliens = [];
 const alienFrames = [
     'eggHead.png',
@@ -19,27 +19,27 @@ const alienFrames = [
 
 let count = 0;
 
-// create an empty container
+// 创建一个空容器
 const alienContainer = new PIXI.Container();
 alienContainer.x = 400;
 alienContainer.y = 300;
 
-// make the stage interactive
+// 使舞台可以互动
 app.stage.interactive = true;
 app.stage.addChild(alienContainer);
 
 function onAssetsLoaded() {
-    // add a bunch of aliens with textures from image paths
+    // 从图像路径中添加一堆带有纹理的外星人
     for (let i = 0; i < 100; i++) {
         const frameName = alienFrames[i % 4];
 
-        // create an alien using the frame name..
+        // 使用frame名创建外星人..
         const alien = PIXI.Sprite.from(frameName);
         alien.tint = Math.random() * 0xFFFFFF;
 
         /*
-         * fun fact for the day :)
-         * another way of doing the above would be
+         * 告诉你个有趣的事：）
+         * 执行上述操作的另一种实现方法是
          * var texture = PIXI.Texture.from(frameName);
          * var alien = new PIXI.Sprite(texture);
          */
@@ -53,13 +53,13 @@ function onAssetsLoaded() {
     app.start();
 }
 
-// Combines both mouse click + touch tap
+// 结合了鼠标点击和触摸点击
 app.stage.on('pointertap', onClick);
 
 function onClick() {
     alienContainer.cacheAsBitmap = !alienContainer.cacheAsBitmap;
 
-    // feel free to play with what's below
+    // 随意使用以下内容
     // var sprite = new PIXI.Sprite(alienContainer.generateTexture());
     // app.stage.addChild(sprite);
     // sprite.x = Math.random() * 800;
@@ -67,7 +67,7 @@ function onClick() {
 }
 
 app.ticker.add(() => {
-    // let's rotate the aliens a little bit
+    // 让我们稍微旋转一下外星人
     for (let i = 0; i < 100; i++) {
         const alien = aliens[i];
         alien.rotation += 0.1;

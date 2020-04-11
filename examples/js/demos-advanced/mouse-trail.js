@@ -1,50 +1,50 @@
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
 
-// Get the texture for rope.
+// 获取绳索的纹理。
 const trailTexture = PIXI.Texture.from('examples/assets/trail.png');
 const historyX = [];
 const historyY = [];
-// historySize determines how long the trail will be.
+// historySize确定路径的长度。
 const historySize = 20;
-// ropeSize determines how smooth the trail will be.
+// ropeSize确定路径的平滑程度。
 const ropeSize = 100;
 const points = [];
 
-// Create history array.
+// 创建历史记录数组。
 for (let i = 0; i < historySize; i++) {
     historyX.push(0);
     historyY.push(0);
 }
-// Create rope points.
+// 创建绳索点。
 for (let i = 0; i < ropeSize; i++) {
     points.push(new PIXI.Point(0, 0));
 }
 
-// Create the rope
+// 创建绳索
 const rope = new PIXI.SimpleRope(trailTexture, points);
 
-// Set the blendmode
+// 设置混合模式
 rope.blendmode = PIXI.BLEND_MODES.ADD;
 
 app.stage.addChild(rope);
 
-// Listen for animate update
+// 监听动画更新
 app.ticker.add((delta) => {
-    // Read mouse points, this could be done also in mousemove/touchmove update. For simplicity it is done here for now.
-    // When implementing this properly, make sure to implement touchmove as interaction plugins mouse might not update on certain devices.
+    // 读取鼠标点，这也可以在mousemove/touchmove更新中完成。为了简单起见，现在在这里完成。
+    // 正确实施此操作后，请确保实施touchmove，因为交互插件的鼠标在某些设备上可能不会更新。
     const mouseposition = app.renderer.plugins.interaction.mouse.global;
 
-    // Update the mouse values to history
+    // 将鼠标值更新为历史记录
     historyX.pop();
     historyX.unshift(mouseposition.x);
     historyY.pop();
     historyY.unshift(mouseposition.y);
-    // Update the points to correspond with history.
+    // 更新点以与历史记录相对应。
     for (let i = 0; i < ropeSize; i++) {
         const p = points[i];
 
-        // Smooth the curve with cubic interpolation to prevent sharp edges.
+        // 使用三次插值法平滑曲线以防止出现尖锐边缘。
         const ix = cubicInterpolation(historyX, i / ropeSize * historySize);
         const iy = cubicInterpolation(historyY, i / ropeSize * historySize);
 
@@ -54,7 +54,7 @@ app.ticker.add((delta) => {
 });
 
 /**
- * Cubic interpolation based on https://github.com/osuushi/Smooth.js
+ * 基于三次插值 https://github.com/osuushi/Smooth.js
  */
 function clipInput(k, arr) {
     if (k < 0) k = 0;

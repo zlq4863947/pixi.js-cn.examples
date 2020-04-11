@@ -8,10 +8,10 @@ app.loader
     .load(build);
 
 function build() {
-    // Create a new texture
+    // 创建新纹理
     const texture = app.loader.resources.bg_grass.texture;
 
-    // Create the simple plane
+    // 创建简单平面
     const verticesX = 10;
     const verticesY = 10;
     const plane = new PIXI.SimplePlane(texture, verticesX, verticesY);
@@ -21,12 +21,12 @@ function build() {
 
     app.stage.addChild(plane);
 
-    // Get the buffer for vertice positions.
+    // 获取顶点位置的缓冲区。
     const buffer = plane.geometry.getBuffer('aVertexPosition');
 
-    // Listen for animate update
+    // 监听动画更新
     app.ticker.add((delta) => {
-        // Randomize the vertice positions a bit to create movement.
+        // 稍微随机化顶点位置以创建运动效果。
         for (let i = 0; i < buffer.data.length; i++) {
             buffer.data[i] += (Math.random() - 0.5);
         }

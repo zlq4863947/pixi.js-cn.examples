@@ -10,47 +10,47 @@ const sprites = new PIXI.ParticleContainer(10000, {
 });
 app.stage.addChild(sprites);
 
-// create an array to store all the sprites
+// 创建一个数组来存储所有精灵
 const maggots = [];
 
 const totalSprites = app.renderer instanceof PIXI.Renderer ? 10000 : 100;
 
 for (let i = 0; i < totalSprites; i++) {
-    // create a new Sprite
+    // 创建一个新的精灵
     const dude = PIXI.Sprite.from('examples/assets/maggot_tiny.png');
 
     dude.tint = Math.random() * 0xE8D4CD;
 
-    // set the anchor point so the texture is centerd on the sprite
+    // 设置锚点，以使纹理居中于精灵上
     dude.anchor.set(0.5);
 
-    // different maggots, different sizes
+    // 不同的蛆，不同的大小
     dude.scale.set(0.8 + Math.random() * 0.3);
 
-    // scatter them all
+    // 分散他们
     dude.x = Math.random() * app.screen.width;
     dude.y = Math.random() * app.screen.height;
 
     dude.tint = Math.random() * 0x808080;
 
-    // create a random direction in radians
+    // 以圆周率创建随机方向
     dude.direction = Math.random() * Math.PI * 2;
 
-    // this number will be used to modify the direction of the sprite over time
+    // 该数字将用于随着时间的推移修改精灵的方向
     dude.turningSpeed = Math.random() - 0.8;
 
-    // create a random speed between 0 - 2, and these maggots are slooww
+    // 在0-2之间产生一个随机速度，让蛆的速度变慢
     dude.speed = (2 + Math.random() * 2) * 0.2;
 
     dude.offset = Math.random() * 100;
 
-    // finally we push the dude into the maggots array so it it can be easily accessed later
+    // 最后我们将dude放入maggots数组，以便以后可以轻松访问
     maggots.push(dude);
 
     sprites.addChild(dude);
 }
 
-// create a bounding box box for the little maggots
+// 为maggots创建一个边界框
 const dudeBoundsPadding = 100;
 const dudeBounds = new PIXI.Rectangle(
     -dudeBoundsPadding,
@@ -62,7 +62,7 @@ const dudeBounds = new PIXI.Rectangle(
 let tick = 0;
 
 app.ticker.add(() => {
-    // iterate through the sprites and update their position
+    // 遍历精灵并更新它们的位置
     for (let i = 0; i < maggots.length; i++) {
         const dude = maggots[i];
         dude.scale.y = 0.95 + Math.sin(tick + dude.offset) * 0.05;
@@ -85,6 +85,6 @@ app.ticker.add(() => {
         }
     }
 
-    // increment the ticker
+    // 增加ticker
     tick += 0.1;
 });
