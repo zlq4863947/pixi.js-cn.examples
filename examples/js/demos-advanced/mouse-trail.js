@@ -40,6 +40,7 @@ app.ticker.add((delta) => {
     historyX.unshift(mouseposition.x);
     historyY.pop();
     historyY.unshift(mouseposition.y);
+    console.log(mouseposition.x, mouseposition.y)
     // 更新点以与历史记录相对应。
     for (let i = 0; i < ropeSize; i++) {
         const p = points[i];

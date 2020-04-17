@@ -57,7 +57,7 @@
     ],
     "sprite": [
         {
-            "title": "Basic",
+            "title": "基础",
             "entry": "basic.js"
         },
         {
