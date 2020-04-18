@@ -1,7 +1,7 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// create a texture from an image path
+// 从图像路径创建纹理
 let texture;
 
 app.loader.add('flowerTop', 'examples/assets/flowerTop.png');
@@ -11,7 +11,7 @@ app.loader.load((loader, resources) => {
 });
 
 function init() {
-    // create rotated textures
+    // 创建旋转的纹理
     const textures = [texture];
     const D8 = PIXI.GroupD8;
     for (let rotate = 1; rotate < 16; rotate++) {
@@ -25,8 +25,8 @@ function init() {
         if (rotate % 2 === 0) {
             rotatedTexture = new PIXI.Texture(texture.baseTexture, frame, crop, trim, rotate);
         } else {
-            // HACK to avoid exception
-            // PIXI doesnt like diamond-shaped UVs, because they are different in canvas and webgl
+            // 避免异常
+            // PIXI不喜欢菱形UV，因为它们在画布和webgl中是不同的
             rotatedTexture = new PIXI.Texture(texture.baseTexture, frame, crop, trim, rotate - 1);
             rotatedTexture.rotate++;
         }
@@ -38,13 +38,13 @@ function init() {
     const gridW = app.screen.width / 4 | 0;
     const gridH = app.screen.height / 5 | 0;
 
-    // normal rotations and mirrors
+    // 正常旋转和反射镜
     for (let i = 0; i < 16; i++) {
-        // create a new Sprite using rotated texture
+        // 使用旋转的纹理创建一个新的精灵
         const dude = new PIXI.Sprite(textures[i < 8 ? i * 2 : (i - 8) * 2 + 1]);
         dude.scale.x = 0.5;
         dude.scale.y = 0.5;
-        // show it in grid
+        // 在网格中显示
         dude.x = offsetX + gridW * (i % 4);
         dude.y = offsetY + gridH * (i / 4 | 0);
         app.stage.addChild(dude);

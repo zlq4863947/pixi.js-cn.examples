@@ -38,7 +38,7 @@ app.stage.addChild(new PIXI.display.Layer(shadowGroup));
 const blurFilter = new PIXI.filters.BlurFilter();
 blurFilter.blur = 0.5;
 
-// create a texture from an image path
+// 从图像路径创建纹理
 const textureGreen = PIXI.Texture.from('examples/assets/bunny_green.png');
 const textureBlue = PIXI.Texture.from('examples/assets/bunny_blue.png');
 

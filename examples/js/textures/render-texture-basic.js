@@ -24,10 +24,9 @@ sprite.y = 60;
 app.stage.addChild(sprite);
 
 /*
- * All the bunnies are added to the container with the addChild method
- * when you do this, all the bunnies become children of the container, and when a container moves,
- * so do all its children.
- * This gives you a lot of flexibility and makes it easier to position elements on the screen
+ * 使用addChild方法将所有兔子添加到容器中
+ * 当您执行此操作时，所有的兔子都会成为该容器的子节点，并且当容器移动时，所有子节点将做相同处理。
+ * 这给您很大的灵活性，并使在屏幕上放置元素更加容易
  */
 container.x = 100;
 container.y = 60;

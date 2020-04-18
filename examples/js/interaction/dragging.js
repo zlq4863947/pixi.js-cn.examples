@@ -1,10 +1,10 @@
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
 
-// create a texture from an image path
+// 从图像路径创建纹理
 const texture = PIXI.Texture.from('examples/assets/bunny.png');
 
-// Scale mode for pixelation
+// 像素化的缩放模式
 texture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
 
 for (let i = 0; i < 10; i++) {
@@ -15,53 +15,51 @@ for (let i = 0; i < 10; i++) {
 }
 
 function createBunny(x, y) {
-    // create our little bunny friend..
+    // 创建我们的小兔子朋友。
     const bunny = new PIXI.Sprite(texture);
 
-    // enable the bunny to be interactive... this will allow it to respond to mouse and touch events
+    // 使兔子能够互动...这将使其能够响应鼠标和触控事件
     bunny.interactive = true;
 
-    // this button mode will mean the hand cursor appears when you roll over the bunny with your mouse
+    // 此按钮模式表示当您用鼠标滑过兔子时出现手形光标
     bunny.buttonMode = true;
 
-    // center the bunny's anchor point
+    // 使兔子的锚点居中
     bunny.anchor.set(0.5);
 
-    // make it a bit bigger, so it's easier to grab
+    // 使它更大一点，因此更容易抓住
     bunny.scale.set(3);
 
-    // setup events for mouse + touch using
-    // the pointer events
+    // 使用指针事件进行鼠标+触控的设置事件
     bunny
         .on('pointerdown', onDragStart)
         .on('pointerup', onDragEnd)
         .on('pointerupoutside', onDragEnd)
         .on('pointermove', onDragMove);
 
-    // For mouse-only events
+    // 对于仅鼠标事件
     // .on('mousedown', onDragStart)
     // .on('mouseup', onDragEnd)
     // .on('mouseupoutside', onDragEnd)
     // .on('mousemove', onDragMove);
 
-    // For touch-only events
+    // 对于仅触控事件
     // .on('touchstart', onDragStart)
     // .on('touchend', onDragEnd)
     // .on('touchendoutside', onDragEnd)
     // .on('touchmove', onDragMove);
 
-    // move the sprite to its designated position
+    // 将精灵移动到指定位置
     bunny.x = x;
     bunny.y = y;
 
-    // add it to the stage
+    // 将其添加到舞台
     app.stage.addChild(bunny);
 }
 
 function onDragStart(event) {
-    // store a reference to the data
-    // the reason for this is because of multitouch
-    // we want to track the movement of this particular touch
+    // 存储对数据的引用的原因是由于多点触控
+    // 我们要跟踪此指定触控的运动
     this.data = event.data;
     this.alpha = 0.5;
     this.dragging = true;
@@ -70,7 +68,7 @@ function onDragStart(event) {
 function onDragEnd() {
     this.alpha = 1;
     this.dragging = false;
-    // set the interaction data to null
+    // 将交互数据设置为null
     this.data = null;
 }
 

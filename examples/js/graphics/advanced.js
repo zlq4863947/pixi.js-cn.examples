@@ -3,8 +3,8 @@ document.body.appendChild(app.view);
 
 const sprite = PIXI.Sprite.from('examples/assets/bg_rotate.jpg');
 
-// // BEZIER CURVE ////
-// information: https://en.wikipedia.org/wiki/Bézier_curve
+// // 贝塞尔曲线 ////
+// 信息: https://zh.wikipedia.org/wiki/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A
 
 const realPath = new PIXI.Graphics();
 
@@ -29,7 +29,7 @@ bezier.position.y = 50;
 
 app.stage.addChild(bezier);
 
-// // BEZIER CURVE 2 ////
+// // 贝塞尔曲线E 2 ////
 const realPath2 = new PIXI.Graphics();
 
 realPath2.lineStyle(2, 0xFFFFFF, 1);
@@ -91,7 +91,7 @@ rectAndHole.endFill();
 
 app.stage.addChild(rectAndHole);
 
-// // Line Texture Style ////
+// // 线条纹理样式 ////
 const beatifulRect = new PIXI.Graphics();
 
 beatifulRect.lineTextureStyle(20, sprite.texture);

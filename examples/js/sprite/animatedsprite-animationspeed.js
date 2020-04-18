@@ -8,7 +8,7 @@ app.loader
     .load(onAssetsLoaded);
 
 function onAssetsLoaded(loader, resources) {
-    // create an array to store the textures
+    // 创建一个数组来存储纹理
     const textures = [];
     let i;
 
@@ -21,7 +21,7 @@ function onAssetsLoaded(loader, resources) {
 
     const scaling = 4;
 
-    // create a slow AnimatedSprite
+    // 创建一个缓慢的AnimatedSprite
     const slow = new PIXI.AnimatedSprite(textures);
     slow.anchor.set(0.5);
     slow.scale.set(scaling);
@@ -31,7 +31,7 @@ function onAssetsLoaded(loader, resources) {
     slow.play();
     app.stage.addChild(slow);
 
-    // create a fast AnimatedSprite
+    // 创建一个快速的AnimatedSprite
     const fast = new PIXI.AnimatedSprite(textures);
     fast.anchor.set(0.5);
     fast.scale.set(scaling);
@@ -40,6 +40,6 @@ function onAssetsLoaded(loader, resources) {
     fast.play();
     app.stage.addChild(fast);
 
-    // start animating
+    // 开启动画
     app.start();
 }

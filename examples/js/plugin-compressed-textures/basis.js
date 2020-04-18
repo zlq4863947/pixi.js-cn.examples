@@ -56,7 +56,7 @@ function show() {
     test.scale.set(0.125);
     test.anchor.set(0.5, 0);
 
-    // Move the sprite to the center of the screen
+    // 将精灵移动到屏幕中心
     tree.x = test.x = app.renderer.width / 2;
     tree.y = test.y = app.renderer.height / 2;
 

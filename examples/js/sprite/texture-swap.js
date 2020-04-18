@@ -3,25 +3,25 @@ document.body.appendChild(app.view);
 
 let bol = false;
 
-// create a texture from an image path
+// 从图像路径创建纹理
 const texture = PIXI.Texture.from('examples/assets/flowerTop.png');
 
-// create a second texture
+// 创建第二个纹理
 const secondTexture = PIXI.Texture.from('examples/assets/eggHead.png');
 
-// create a new Sprite using the texture
+// 使用纹理创建一个新的Sprite
 const dude = new PIXI.Sprite(texture);
 
-// center the sprites anchor point
+// 将精灵的锚点居中
 dude.anchor.set(0.5);
 
-// move the sprite to the center of the screen
+// 将精灵移动到屏幕中心
 dude.x = app.screen.width / 2;
 dude.y = app.screen.height / 2;
 
 app.stage.addChild(dude);
 
-// make the sprite interactive
+// 开启精灵交互事件
 dude.interactive = true;
 dude.buttonMode = true;
 
@@ -35,6 +35,6 @@ dude.on('pointertap', () => {
 });
 
 app.ticker.add(() => {
-    // just for fun, let's rotate mr rabbit a little
+    // 只是为了好玩，让我们稍微旋转兔子先生
     dude.rotation += 0.1;
 });

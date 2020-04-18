@@ -61,97 +61,97 @@
             "entry": "basic.js"
         },
         {
-            "title": "Texture Swap",
+            "title": "纹理交换",
             "entry": "texture-swap.js"
         },
         {
-            "title": "Animated Sprite - Explosion",
+            "title": "动画精灵 - 爆炸",
             "entry": "animatedsprite-explosion.js"
         },
         {
-            "title": "Animated Sprite - Jet",
+            "title": "动画精灵 - 飞机",
             "entry": "animatedsprite-jet.js"
         },
         {
-            "title": "Animated Sprite Speed",
+            "title": "动画精灵速度",
             "entry": "animatedsprite-animationspeed.js"
         },
         {
-            "title": "Tiling Sprite",
+            "title": "平铺精灵",
             "entry": "tiling-sprite.js"
         },
         {
-            "title": "Video",
+            "title": "视频",
             "entry": "video.js"
         }
     ],
     "text": [
         {
-            "title": "Text",
+            "title": "文字",
             "entry": "text.js"
         },
         {
-            "title": "Bitmap Text",
+            "title": "位图文字",
             "entry": "bitmap-text.js"
         },
         {
-            "title": "Webfont",
+            "title": "在线字体",
             "entry": "webfont.js"
         }
     ],
     "graphics": [
         {
-            "title": "Simple",
+            "title": "简单",
             "entry": "simple.js"
         },
         {
-            "title": "Advanced",
+            "title": "高级",
             "entry": "advanced.js"
         },
         {
-            "title": "Dynamic",
+            "title": "动态",
             "entry": "dynamic.js"
         }
     ],
     "interaction": [
         {
-            "title": "Click",
+            "title": "点击",
             "entry": "click.js"
         },
         {
-            "title": "Interactivity",
+            "title": "互动性",
             "entry": "interactivity.js"
         },
         {
-            "title": "Dragging",
+            "title": "拖曳",
             "entry": "dragging.js"
         },
         {
-            "title": "Custom mouse icon",
+            "title": "自定义鼠标图标",
             "entry": "custom-mouse-icon.js"
         },
         {
-            "title": "Custom Hitarea",
+            "title": "自定义命中区域",
             "entry": "custom-hitarea.js"
         }
     ],
     "masks": [
         {
-            "title": "Graphics",
+            "title": "图形",
             "entry": "graphics.js"
         },
         {
-            "title": "Sprite",
+            "title": "精灵",
             "entry": "sprite.js"
         },
         {
-            "title": "Filter",
+            "title": "滤镜",
             "entry": "filter.js"
         }
     ],
     "filters-basic": [
         {
-            "title": "Blur",
+            "title": "模糊",
             "entry": "blur.js"
         },
         {
@@ -240,23 +240,23 @@
     ],
     "textures": [
         {
-            "title": "Texture Rotate",
+            "title": "纹理旋转",
             "entry": "texture-rotate.js"
         },
         {
-            "title": "Render Texture Basic",
+            "title": "基础渲染纹理",
             "entry": "render-texture-basic.js"
         },
         {
-            "title": "Render Texture Advanced",
+            "title": "高级渲染纹理",
             "entry": "render-texture-advanced.js"
         },
         {
-            "title": "Gradient Basic",
+            "title": "渐变基础",
             "entry": "gradient-basic.js"
         },
         {
-            "title": "Gradient Resource",
+            "title": "渐变资源",
             "entry": "gradient-resource.js"
         }
     ],

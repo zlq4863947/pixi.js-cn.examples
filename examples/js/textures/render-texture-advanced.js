@@ -1,7 +1,7 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// create two render textures... these dynamic textures will be used to draw the scene into itself
+// 创建两个渲染纹理...这些动态纹理将用于将场景绘制到自身中
 let renderTexture = PIXI.RenderTexture.create(
     app.screen.width,
     app.screen.height,
@@ -12,15 +12,15 @@ let renderTexture2 = PIXI.RenderTexture.create(
 );
 const currentTexture = renderTexture;
 
-// create a new sprite that uses the render texture we created above
+// 创建一个使用我们上面创建的渲染纹理的新精灵
 const outputSprite = new PIXI.Sprite(currentTexture);
 
-// align the sprite
+// 对齐精灵
 outputSprite.x = 400;
 outputSprite.y = 300;
 outputSprite.anchor.set(0.5);
 
-// add to stage
+// 添加到舞台
 app.stage.addChild(outputSprite);
 
 const stuffContainer = new PIXI.Container();
@@ -30,7 +30,7 @@ stuffContainer.y = 300;
 
 app.stage.addChild(stuffContainer);
 
-// create an array of image ids..
+// 创建图像ID的数组。
 const fruits = [
     'examples/assets/rt_object_01.png',
     'examples/assets/rt_object_02.png',
@@ -42,10 +42,10 @@ const fruits = [
     'examples/assets/rt_object_08.png',
 ];
 
-// create an array of items
+// 创建项目数组
 const items = [];
 
-// now create some items and randomly position them in the stuff container
+// 现在创建一些项目并将它们随机放置在填充容器中
 for (let i = 0; i < 20; i++) {
     const item = PIXI.Sprite.from(fruits[i % fruits.length]);
     item.x = Math.random() * 400 - 200;
@@ -55,31 +55,31 @@ for (let i = 0; i < 20; i++) {
     items.push(item);
 }
 
-// used for spinning!
+// 用于快速旋转
 let count = 0;
 
 app.ticker.add(() => {
     for (let i = 0; i < items.length; i++) {
-    // rotate each item
+        // 旋转每个项目
         const item = items[i];
         item.rotation += 0.1;
     }
 
     count += 0.01;
 
-    // swap the buffers ...
+    // 交换缓冲区...
     const temp = renderTexture;
     renderTexture = renderTexture2;
     renderTexture2 = temp;
 
-    // set the new texture
+    // 设置新的纹理
     outputSprite.texture = renderTexture;
 
-    // twist this up!
+    // 扭起来！
     stuffContainer.rotation -= 0.01;
     outputSprite.scale.set(1 + Math.sin(count) * 0.2);
 
-    // render the stage to the texture
-    // the 'true' clears the texture before the content is rendered
+    // 将舞台渲染为纹理
+    // 'true' 在渲染内容之前清除纹理
     app.renderer.render(app.stage, renderTexture2, false);
 });

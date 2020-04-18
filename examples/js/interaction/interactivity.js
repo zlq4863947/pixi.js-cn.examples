@@ -1,15 +1,15 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// create a background...
+// 创建背景...
 const background = PIXI.Sprite.from('examples/assets/bg_button.jpg');
 background.width = app.screen.width;
 background.height = app.screen.height;
 
-// add background to stage...
+// 为舞台添加背景...
 app.stage.addChild(background);
 
-// create some textures from an image path
+// 从图像路径创建一些纹理
 const textureButton = PIXI.Texture.from('examples/assets/button.png');
 const textureButtonDown = PIXI.Texture.from('examples/assets/button_down.png');
 const textureButtonOver = PIXI.Texture.from('examples/assets/button_over.png');
@@ -31,40 +31,38 @@ for (let i = 0; i < 5; i++) {
     button.x = buttonPositions[i * 2];
     button.y = buttonPositions[i * 2 + 1];
 
-    // make the button interactive...
+    // 使按钮具有交互性...
     button.interactive = true;
     button.buttonMode = true;
 
     button
-    // Mouse & touch events are normalized into
-    // the pointer* events for handling different
-    // button events.
+        // 鼠标和触控事件被标准化为pointer*事件，用于处理不同的按钮事件。
         .on('pointerdown', onButtonDown)
         .on('pointerup', onButtonUp)
         .on('pointerupoutside', onButtonUp)
         .on('pointerover', onButtonOver)
         .on('pointerout', onButtonOut);
 
-    // Use mouse-only events
+    // 使用仅鼠标事件
     // .on('mousedown', onButtonDown)
     // .on('mouseup', onButtonUp)
     // .on('mouseupoutside', onButtonUp)
     // .on('mouseover', onButtonOver)
     // .on('mouseout', onButtonOut)
 
-    // Use touch-only events
+    // 使用仅触控事件
     // .on('touchstart', onButtonDown)
     // .on('touchend', onButtonUp)
     // .on('touchendoutside', onButtonUp)
 
-    // add it to the stage
+    // 将其添加到舞台
     app.stage.addChild(button);
 
-    // add button to array
+    // 添加按钮到数组
     buttons.push(button);
 }
 
-// set some silly values...
+// 设置一些值...
 buttons[0].scale.set(1.2);
 buttons[2].rotation = Math.PI / 10;
 buttons[3].scale.set(0.8);

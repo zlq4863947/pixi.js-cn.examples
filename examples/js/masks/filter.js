@@ -1,10 +1,10 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// Inner radius of the circle
+// 圆的内半径
 const radius = 100;
 
-// The blur amount
+// 模糊量
 const blurSize = 32;
 
 app.loader.add('grass', 'examples/assets/bg_grass.jpg');

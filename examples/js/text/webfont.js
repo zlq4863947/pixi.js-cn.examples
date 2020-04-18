@@ -1,7 +1,7 @@
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
 
-// // Load them google fonts before starting...!
+// 在开始之前加载它们Google字体...！
 window.WebFontConfig = {
     google: {
         families: ['Snippet', 'Arvo:700italic', 'Podkova:700'],
@@ -13,7 +13,7 @@ window.WebFontConfig = {
 };
 
 /* eslint-disable */
-// include the web-font loader script
+// 包含网络字体加载器脚本
 (function() {
     const wf = document.createElement('script');
     wf.src = `${document.location.protocol === 'https:' ? 'https' : 'http'
@@ -26,7 +26,7 @@ window.WebFontConfig = {
 /* eslint-enabled */
 
 function init() {
-    // create some white text using the Snippet webfont
+    // 使用Snippet网络字体创建一些白色文本
     const textSample = new PIXI.Text('Pixi.js text using the\ncustom "Snippet" Webfont', {
         fontFamily: 'Snippet',
         fontSize: 50,

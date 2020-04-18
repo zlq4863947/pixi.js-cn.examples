@@ -8,7 +8,7 @@ app.loader
     .load(onAssetsLoaded);
 
 function onAssetsLoaded() {
-    // create an array to store the textures
+    // 创建一个数组来存储纹理
     const explosionTextures = [];
     let i;
 
@@ -18,7 +18,7 @@ function onAssetsLoaded() {
     }
 
     for (i = 0; i < 50; i++) {
-    // create an explosion AnimatedSprite
+        // 创建一个爆炸AnimatedSprite
         const explosion = new PIXI.AnimatedSprite(explosionTextures);
 
         explosion.x = Math.random() * app.screen.width;
@@ -30,6 +30,6 @@ function onAssetsLoaded() {
         app.stage.addChild(explosion);
     }
 
-    // start animating
+    // 开启动画
     app.start();
 }

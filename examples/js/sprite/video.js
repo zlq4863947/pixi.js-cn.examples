@@ -1,7 +1,7 @@
 const app = new PIXI.Application({ transparent: true });
 document.body.appendChild(app.view);
 
-// Create play button that can be used to trigger the video
+// 创建可用于触发视频的播放按钮
 const button = new PIXI.Graphics()
     .beginFill(0x0, 0.5)
     .drawRoundedRect(0, 0, 100, 100, 10)
@@ -11,37 +11,35 @@ const button = new PIXI.Graphics()
     .lineTo(36, 70)
     .lineTo(70, 50);
 
-// Position the button
+// 定位按钮
 button.x = (app.screen.width - button.width) / 2;
 button.y = (app.screen.height - button.height) / 2;
 
-// Enable interactivity on the button
+// 在按钮上启用互动
 button.interactive = true;
 button.buttonMode = true;
 
-// Add to the stage
+// 添加到舞台
 app.stage.addChild(button);
 
-// Listen for a click/tap event to start playing the video
-// this is useful for some mobile platforms. For example:
-// ios9 and under cannot render videos in PIXI without a
-// polyfill - https://github.com/bfred-it/iphone-inline-video
-// ios10 and above require a click/tap event to render videos
-// that contain audio in PIXI. Videos with no audio track do
-// not have this requirement
+// 监听点击/触碰事件以开始播放视频
+// 这对于某些移动平台很有用。 例如：
+// 没有polyfill的ios9及以下版本无法在PIXI中渲染视频 - https://github.com/bfred-it/iphone-inline-video
+// ios10及更高版本需要点击/触碰事件才能渲染视频
+// 在PIXI中包含音频。没有音轨的视频没有此要求
 button.on('pointertap', onPlayVideo);
 
 function onPlayVideo() {
-    // Don't need the button anymore
+    // 不再需要该按钮
     button.destroy();
 
-    // create a video texture from a path
+    // 从路径创建视频纹理
     const texture = PIXI.Texture.from('examples/assets/video.mp4');
 
-    // create a new Sprite using the video texture (yes it's that easy)
+    // 使用视频纹理创建一个新的Sprite（是的，就是这么简单）
     const videoSprite = new PIXI.Sprite(texture);
 
-    // Stetch the fullscreen
+    // 全屏拉伸
     videoSprite.width = app.screen.width;
     videoSprite.height = app.screen.height;
 

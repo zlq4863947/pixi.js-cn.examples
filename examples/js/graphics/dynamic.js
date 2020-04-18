@@ -5,11 +5,11 @@ app.stage.interactive = true;
 
 const graphics = new PIXI.Graphics();
 
-// set a fill and line style
+// 设置填充和线条样式
 graphics.beginFill(0xFF3300);
 graphics.lineStyle(10, 0xffd900, 1);
 
-// draw a shape
+// 画一个形状
 graphics.moveTo(50, 50);
 graphics.lineTo(250, 50);
 graphics.lineTo(100, 100);
@@ -19,11 +19,11 @@ graphics.lineTo(50, 50);
 graphics.closePath();
 graphics.endFill();
 
-// set a fill and line style again
+// 再次设置填充和线条样式
 graphics.lineStyle(10, 0xFF0000, 0.8);
 graphics.beginFill(0xFF700B, 1);
 
-// draw a second shape
+// 画第二个形状
 graphics.moveTo(210, 300);
 graphics.lineTo(450, 320);
 graphics.lineTo(570, 350);
@@ -34,11 +34,11 @@ graphics.lineTo(210, 300);
 graphics.closePath();
 graphics.endFill();
 
-// draw a rectangle
+// 画一个矩形
 graphics.lineStyle(2, 0x0000FF, 1);
 graphics.drawRect(50, 250, 100, 100);
 
-// draw a circle
+// 画一个圆圈
 graphics.lineStyle(0);
 graphics.beginFill(0xFFFF0B, 0.5);
 graphics.drawCircle(470, 200, 100);
@@ -51,7 +51,7 @@ graphics.lineTo(600, 300);
 
 app.stage.addChild(graphics);
 
-// let's create a moving shape
+// 让我们创建一个移动的形状
 const thing = new PIXI.Graphics();
 app.stage.addChild(thing);
 thing.x = 800 / 2;
@@ -59,7 +59,7 @@ thing.y = 600 / 2;
 
 let count = 0;
 
-// Just click on the stage to draw random lines
+// 只需在舞台上单击即可绘制随机线条
 window.app = app;
 app.renderer.plugins.interaction.on('pointerdown', onPointerDown);
 

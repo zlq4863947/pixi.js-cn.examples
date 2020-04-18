@@ -1,7 +1,7 @@
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
 
-const basicText = new PIXI.Text('Basic text in pixi');
+const basicText = new PIXI.Text('pixi中的基本文字');
 basicText.x = 50;
 basicText.y = 100;
 
@@ -12,7 +12,7 @@ const style = new PIXI.TextStyle({
     fontSize: 36,
     fontStyle: 'italic',
     fontWeight: 'bold',
-    fill: ['#ffffff', '#00ff99'], // gradient
+    fill: ['#ffffff', '#00ff99'], // 斜度
     stroke: '#4a1850',
     strokeThickness: 5,
     dropShadow: true,
@@ -24,7 +24,7 @@ const style = new PIXI.TextStyle({
     wordWrapWidth: 440,
 });
 
-const richText = new PIXI.Text('Rich text with a lot of options and across multiple lines', style);
+const richText = new PIXI.Text('带有多种选项且跨多行的富文本', style);
 richText.x = 50;
 richText.y = 250;
 

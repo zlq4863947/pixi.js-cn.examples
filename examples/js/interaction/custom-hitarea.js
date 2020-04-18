@@ -3,7 +3,7 @@ document.body.appendChild(app.view);
 
 const yellowStar = PIXI.Texture.from('examples/assets/yellowstar.png');
 
-// Standard Sprite Button
+// 标准精灵按钮
 const starButton1 = new PIXI.Sprite(yellowStar);
 
 starButton1.position.set(50, 200);
@@ -17,12 +17,11 @@ starButton1.on('pointerover', (event) => onPointerOver(starButton1));
 
 starButton1.on('pointerout', (event) => onPointerOut(starButton1));
 
-// Custom Hitarea Button
+// 自定义命中区域按钮
 const starButton2 = new PIXI.Sprite(yellowStar);
 starButton2.position.set(250, 200);
 
-// Create a hitarea that matches the sprite, which will be used for point
-// intersection
+// 创建一个与精灵匹配的区域，该区域将用于指针交互
 starButton2.hitArea = new PIXI.Polygon([
     80, 0,
     100, 50,
@@ -44,7 +43,7 @@ starButton2.on('pointerover', (event) => onPointerOver(starButton2));
 
 starButton2.on('pointerout', (event) => onPointerOut(starButton2));
 
-// With Mask, No Hit Area
+// 使用掩罩，无命中区域
 const starButton3 = new PIXI.Sprite(yellowStar);
 
 starButton3.position.set(450, 200);
@@ -65,9 +64,9 @@ starButton3.on('pointerover', (event) => onPointerOver(starButton3));
 
 starButton3.on('pointerout', (event) => onPointerOut(starButton3));
 
-// With a Mask and Hit Area
-// Hitareas ignore masks. You can still click on a button made in this way,
-// even from areas covered by a mask
+// 使用掩罩 和 命中区域
+// 命中区域会忽略掩罩。您仍然可以点击以这种方式制作的按钮，
+// 即使是被掩罩覆盖的区域
 const starButton4 = new PIXI.Sprite(yellowStar);
 starButton4.position.set(600, 200);
 
@@ -78,7 +77,7 @@ const squareMask2 = new PIXI.Graphics()
 
 starButton4.mask = squareMask2;
 
-// Again, hitarea for intersection checks
+// 再次，进行命中区域交互性检查
 starButton4.hitArea = new PIXI.Polygon([
     80, 0,
     100, 50,
@@ -118,7 +117,7 @@ const text4 = new PIXI.Text('Mask + Hit Area', style);
 text4.x = starButton4.x - 10;
 text4.y = starButton4.y + 170;
 
-// Add to stage
+// 添加到舞台
 app.stage.addChild(
     starButton2,
     starButton1,

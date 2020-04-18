@@ -1,12 +1,12 @@
 const app = new PIXI.Application();
 document.body.appendChild(app.view);
 
-// create a texture from an image path
+// 从图像路径创建纹理
 const texture = PIXI.Texture.from('examples/assets/p2.jpeg');
 
-/* create a tiling sprite ...
- * requires a texture, a width and a height
- * in WebGL the image size should preferably be a power of two
+/* 创建一个平铺精灵...
+ * 需要的纹理，宽度和高度
+ * 在WebGL中，图片大小最好是2的幂
  */
 const tilingSprite = new PIXI.TilingSprite(
     texture,

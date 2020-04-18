@@ -36,7 +36,7 @@ for (let i = 0; i < 5; i++) {
 
 // Listen for animate update
 app.ticker.add((delta) => {
-    // just for fun, let's rotate mr rabbit a little
+    // 只是为了好玩，让我们稍微旋转兔子先生
     // delta is 1 if running at 100% performance
     // creates frame-independent transformation
     for (let i = 0; i < bunnies.length; i++) {

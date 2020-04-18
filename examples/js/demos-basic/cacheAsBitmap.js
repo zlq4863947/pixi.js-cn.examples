@@ -53,7 +53,7 @@ function onAssetsLoaded() {
     app.start();
 }
 
-// 结合了鼠标点击和触摸点击
+// 结合了鼠标点击和触控点击
 app.stage.on('pointertap', onClick);
 
 function onClick() {

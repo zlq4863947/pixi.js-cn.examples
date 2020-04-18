@@ -1,4 +1,4 @@
-// 对于此示例，您必须使用鼠标或触摸屏
+// 对于此示例，您必须使用鼠标或触控屏
 
 const app = new PIXI.Application();
 document.body.appendChild(app.view);

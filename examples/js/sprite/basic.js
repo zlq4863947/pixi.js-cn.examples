@@ -4,7 +4,7 @@ document.body.appendChild(app.view);
 // 从图像路径创建一个新的精灵
 const bunny = PIXI.Sprite.from('examples/assets/bunny.png');
 
-// 使精灵的锚点居中
+// 将精灵的锚点居中
 bunny.anchor.set(0.5);
 
 // 将精灵移动到屏幕中心
